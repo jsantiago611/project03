@@ -130,4 +130,4 @@ const nextConfig = {
 };
 
 module.exports = isDevelopment
-  ? nextConfig;
+  ? nextConfig
