@@ -4,12 +4,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
 
-const { withSentryConfig } = require("@sentry/nextjs");
-
-const SentryWebpackPluginOptions = {
-  silent: true,
-};
-
 // https://securityheaders.com
 // https://csp-evaluator.withgoogle.com/
 const ContentSecurityPolicy = `
@@ -136,5 +130,4 @@ const nextConfig = {
 };
 
 module.exports = isDevelopment
-  ? nextConfig
-  : withSentryConfig(withPWA(withBundleAnalyzer(nextConfig)), SentryWebpackPluginOptions);
+  ? nextConfig;
